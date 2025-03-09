@@ -1,0 +1,110 @@
+/* Custom CSS Variables */
+:root {
+  /* Color variables */
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #0dcaf0;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --text-color: #212529;
+  --text-light: #6c757d;
+  --background-color: #f8f9fa;
+  --border-color: #dee2e6;
+  
+  /* Spacing variables */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 3rem;
+  
+  /* Other variables */
+  --border-radius: 0.375rem;
+  --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+  --max-width: 1280px;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Custom form transitions */
+.input-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Gradient text */
+.gradient-text {
+  background-image: linear-gradient(to right, var(--primary-color), var(--info-color));
+  background-clip: text;
+  color: transparent;
+}
+
+/* Custom card styles */
+.custom-card {
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+/* Custom button styles */
+.btn-custom {
+  transition: var(--transition);
+}
+
+.btn-custom:hover {
+  transform: translateY(-2px);
+}
+
+/* Custom utility classes */
+.text-gradient {
+  background-image: linear-gradient(to right, var(--primary-color), var(--info-color));
+  background-clip: text;
+  color: transparent;
+}
+
+/* Fix for Bootstrap icons */
+.bi {
+  vertical-align: -0.125em;
+}
+
+/* Custom spacing utilities */
+.spacing-xs { margin: var(--spacing-xs); }
+.spacing-sm { margin: var(--spacing-sm); }
+.spacing-md { margin: var(--spacing-md); }
+.spacing-lg { margin: var(--spacing-lg); }
+.spacing-xl { margin: var(--spacing-xl); }
+
+/* Custom shadows */
+.shadow-custom {
+  box-shadow: var(--shadow);
+}
+
+.shadow-custom-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+/* Custom border radius */
+.rounded-custom {
+  border-radius: var(--border-radius);
+}
+
+/* Custom transitions */
+.transition-custom {
+  transition: var(--transition);
+} 

@@ -1,0 +1,60 @@
+/* Minimal custom styles that don't conflict with Bootstrap */
+
+/* App container styles */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+}
+
+/* Custom logo animation */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.logo {
+  height: 3em;
+  padding: 0.5em;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 0.5em rgba(13, 110, 253, 0.5));
+}
+
+/* Custom link styles */
+.brand-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+.brand-link:hover {
+  color: #0a58ca;
+}
+
+/* Custom footer styles */
+.app-footer {
+  padding: 1.5rem 0;
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Style demo link highlight */
+.style-demo-link {
+  color: #6610f2 !important;
+  font-weight: bold;
+}
+
+.style-demo-link:hover {
+  color: #520dc2 !important;
+}

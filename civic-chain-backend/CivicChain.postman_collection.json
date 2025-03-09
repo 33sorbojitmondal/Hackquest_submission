@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
+		"name": "CivicChain API",
+		"description": "Collection for testing CivicChain API endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test Routes",
+			"item": [
+				{
+					"name": "API Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/api/test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"api",
+								"test"
+							]
+						},
+						"description": "Test if the API is working"
+					},
+					"response": []
+				},
+				{
+					"name": "User Routes Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/api/users/test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"api",
+								"users",
+								"test"
+							]
+						},
+						"description": "Test if the user routes are working"
+					},
+					"response": []
+				}
+			],
+			"description": "Test routes to verify API functionality"
+		},
+		{
+			"name": "User Management",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Test User\",\n    \"email\": \"test@example.com\",\n    \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5002/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						},
+						"description": "Register a new user"
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@example.com\",\n    \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5002/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						},
+						"description": "Login a user"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5002/api/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"api",
+								"users",
+								"me"
+							]
+						},
+						"description": "Get current user profile"
+					},
+					"response": []
+				}
+			],
+			"description": "User authentication and profile management"
+		},
+		{
+			"name": "Activities",
+			"item": [
+				{
+					"name": "Get All Activities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/api/activities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"api",
+								"activities"
+							]
+						},
+						"description": "Get all activities"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Activity",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Community Cleanup\",\n    \"description\": \"Cleaned up the local park\",\n    \"category\": \"Environmental\",\n    \"points\": 20,\n    \"location\": \"Central Park\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5002/api/activities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"api",
+								"activities"
+							]
+						},
+						"description": "Create a new activity"
+					},
+					"response": []
+				}
+			],
+			"description": "Activity management endpoints"
+		},
+		{
+			"name": "Rewards",
+			"item": [
+				{
+					"name": "Get All Rewards",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/api/rewards",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"api",
+								"rewards"
+							]
+						},
+						"description": "Get all rewards"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Reward (Admin)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{adminToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Free Museum Pass\",\n    \"description\": \"Free entry to the city museum for a month\",\n    \"pointsCost\": 100,\n    \"category\": \"Culture\",\n    \"quantity\": 10\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5002/api/rewards",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"api",
+								"rewards"
+							]
+						},
+						"description": "Create a new reward (admin only)"
+					},
+					"response": []
+				}
+			],
+			"description": "Reward management endpoints"
+		},
+		{
+			"name": "Proposals",
+			"item": [
+				{
+					"name": "Get All Proposals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/api/proposals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"api",
+								"proposals"
+							]
+						},
+						"description": "Get all proposals"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Proposal",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"New Community Garden\",\n    \"description\": \"Proposal to create a new community garden in the downtown area\",\n    \"category\": \"Community Improvement\",\n    \"votingDeadline\": \"2023-12-31T23:59:59Z\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5002/api/proposals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"api",
+								"proposals"
+							]
+						},
+						"description": "Create a new proposal"
+					},
+					"response": []
+				}
+			],
+			"description": "DAO proposal management endpoints"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Auto-save token from login or register responses",
+					"if (pm.response.code === 200 || pm.response.code === 201) {",
+					"    const jsonData = pm.response.json();",
+					"    if (jsonData.token) {",
+					"        pm.environment.set(\"token\", jsonData.token);",
+					"        console.log(\"Token saved to environment\");",
+					"    }",
+					"}"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "adminToken",
+			"value": ""
+		}
+	]
+} 
